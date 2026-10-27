@@ -81,10 +81,87 @@
 
   --text-caption: 14px; /* Labels, tags, icon names (added) */
   --text-caption--line-height: 1.3;
+  /* ---- Shape + depth ---- */
+  --radius-window: 18px; /* windows, taskbar, icon tiles */
+  --shadow-sticker: 4px 4px 0 var(--color-primary-400); /* chunky offset shadow */
+  --shadow-window: 0 18px 40px rgb(120 90 140 / 0.35), 5px 5px 0 var(--color-primary-400);
+  --shadow-button: 0 4px 0 var(--color-primary-400); /* pink button */
+  --shadow-button-blue: 0 4px 0 var(--color-secondary-300); /* blue button */
+
+   /* ---- Motion (music widget) ---- */
+  --animate-progress: progress 24s linear infinite;
+  @keyframes progress {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  --animate-eq: eq 1s ease-in-out infinite;
+  @keyframes eq {
+    0%,
+    100% {
+      transform: scaleY(0.25);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
+
+  --animate-bob: bob 3s ease-in-out infinite;
+  @keyframes bob {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+      transform: translateY(-3px) rotate(2deg);
+    }
+  }
+
+  --animate-note: note 3.2s ease-out infinite;
+  @keyframes note {
+    0% {
+      opacity: 0;
+      transform: translate(0, 6px) rotate(-8deg) scale(0.7);
+    }
+    25% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(8px, -22px) rotate(12deg) scale(1);
+    }
+  }
+}
+
+/* Pastel scrollbar for window bodies. Chromium uses scrollbar-color; Safari uses the webkit rules. */
+@utility scrollbar-pastel {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-secondary) var(--color-primary-50);
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--color-primary-50);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);
+    border: 3px solid var(--color-primary-50);
+    border-radius: 8px;
+  }
 }
 
 /* Default styles so plain <h1>-<h4> and <p> already follow the scale. */
 @layer base {
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
   body {
     @apply bg-base-dirty-white font-body text-body text-gray-600;
   }

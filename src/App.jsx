@@ -1,5 +1,5 @@
-import StyleGuide from './components/StyleGuide'
+import Desktop from './components/Desktop'
 
 export default function App() {
-  return <StyleGuide />
+  return <Desktop />
 }
