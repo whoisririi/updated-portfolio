@@ -26,6 +26,11 @@ const projectFiles = import.meta.glob('../assets/projects/*/*.{png,jpg,jpeg,webp
   import: 'default',
 })
 
+const toolFiles = import.meta.glob('../assets/tools/*.{png,jpg,jpeg,webp,svg,gif}', {
+  eager: true,
+  import: 'default',
+})
+
 export const icons = Object.fromEntries(
   Object.entries(iconFiles).map(([path, url]) => [
     path.split('/').pop().replace(/\.[^.]+$/, ''),
@@ -62,3 +67,10 @@ for (const [path, url] of sortedProjectFiles) {
   if (name === 'cover') entry.cover = url
   else if (name.startsWith('shot')) entry.shots.push(url)
 }
+
+export const toolIcons = Object.fromEntries(
+  Object.entries(toolFiles).map(([path, url]) => [
+    path.split('/').pop().replace(/\.[^.]+$/, ''),
+    url,
+  ]),
+)
