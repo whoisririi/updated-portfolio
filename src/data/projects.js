@@ -1,0 +1,80 @@
+// Text for the projects window. Edit the placeholders here.
+//   id        also the folder name for your images: src/assets/projects/<id>/
+//             cover.jpg is the list thumbnail; shot-1.jpg, shot-2.jpg, ... fill the gallery
+//   captions  optional, one per screenshot
+
+export const underDevelopmentNote = 'This project is under development'
+export const projects = [
+  {
+    id: 'examplify',
+    title: 'Examplify',
+    tags: ['Landing Page', 'Exam Platform'],
+    summary: 'AI powered exam platform reviewed by admins',
+    overview: 'Redesigned an existing landing page for Examplify, an AI powered exam platform. The new design features a modern layout, improved navigation, and a more engaging visual style that aligns with the brand identity.',
+    role: 'UX/UI Designer',
+    year: '2026',
+    tools: ['Figma'],
+    captions: ['Hero Section', 'Course Selection', 'About Us Page Hero Section', 'How It Works','FAQs Preview'],
+    links: { figma: 'https://www.figma.com/design/cMb3W5Jxf4yrfMXgDOYwZt/Examplify---Reviewer---Redesign?node-id=0-1&t=2ah7zUt8VEmrM8RV-1', website: '' },
+  },
+  {
+    id: 'lazychimp',
+    title: 'Lazy Chimp',
+    tags: ['Landing Page', 'Car Selling Platform'],
+    summary: 'A site designed to help users sell their cars quickly and easily.',
+    overview: 'Redesigned and improved an existing landing page for LazyChimp, a car selling platform. The new design features a modern layout, improved navigation, and a more engaging visual style that aligns with the brand identity. I have also given the team different options of the sections to choose from, so they can pick the one that best fits their needs and goals.',
+    role: 'UX/UI Designer',
+    year: '2026',
+    tools: ['Figma'],
+    captions: ['Home Page Hero Section', 'Service Location Hero Section Option 1', 'City List Section', 'Service Location Hero Section Option 2', 'FAQs Section','CTA and Footer Section'],
+    links: { figma: 'https://www.figma.com/design/LMPVlSvUi8srX1K2HKtF6E/LAZYCHIMP?node-id=3-512&t=Hxz3B60CaYOOwoQt-1', website: '' },
+  },
+  {
+    id: 'ariacare',
+    title: 'Aria Care',
+    tags: ['Landing Page', 'Patient Communication Tool'],
+    summary: 'An AI powered patient communication tool that helps healthcare providers improve patient engagement and satisfaction.',
+    overview: "Redesigned an improved and responsive version of the landing page for Aria Care. The design process involved  iterative prototyping to ensure the final product met the needs of the client.",
+    role: 'UX/UI Designer',
+    year: '2026',
+    tools: ['Figma','Figma Motion'],
+    captions: ['Home Page Hero Section', 'Why We Built This Section', 'Team Section', 'Channel Integration Section', 'FAQs Section', 'Blog Overview Page','Blog Detailed View'],
+    links: { figma: 'https://www.figma.com/design/2P6LfhIrvgA4sBtc2yZEhT/Aria-Care---AI-Healthcare---Redesigns?node-id=1-3&t=ZS24MwuwrOKvKSAV-1', website: '' },
+  },
+    {
+    id: 'rwa',
+    title: 'Ride With Alliance',
+    tags: ['Landing Page', 'Assisted Medical Transportation'],
+    summary: 'Assisted Medical Transportation across Greater Chicagoland — safe, on-time, and driver-assisted from your door to your destination.',
+    overview: "Designed and delivered a high-fidelity interface for this project's mockup, making it responsive and maintaining a strict alignment with the brand's visual identity. The design process involved creating a user-friendly interface that effectively communicates the service's value proposition, ensuring accessibility and ease of navigation for all users.",
+    role: 'UX/UI Designer',
+    year: '2026',
+    tools: ['Figma'],
+    captions: ['Home Page Hero Section', 'Blog Detailed View', 'Vehicle Tools Section', 'Why RWA Section'],
+    links: { figma: 'https://www.figma.com/design/AuTLH9njoS2uvzV4cDoVi5/IFA---RWA-MOCKUPS?node-id=3-928&t=KyX3qiOSCdf36Io5-1', website: '' },
+  },
+  {
+    id: 'pixelbuild',
+    title : 'PixelBuild Edu Web PC Builder',
+    tags: ['PC Builder System', 'Educational Platform'],
+    summary: 'A web-based PC builder for educational purposes, allowing users to configure and visualize custom computer setups.',
+    overview: 'A thesis designed and developed that lets the users learn how to build custom PCs. The system features a compatibility checker that lets the user know if the parts they are trying to use are compatible with each other or not. The system also features a drag and drop functionality, some classic quiz modes, and other educational features.',
+    role: 'UX/UI Designer',
+    year: '2024-2025',
+    tools: ['Figma'],
+    captions: ['Home Page Hero Section', 'PC Compatibility Checker Workspace', 'Drag and Drop', 'Testimonials Section', 'Student Dashboard'],
+    links: { figma: 'https://www.figma.com/design/TtS8jJ6vZXIecV8v3Ik6dZ/PixelBuild?node-id=32-39&t=aTvODQcXg34zg1WW-1', website: 'https://pixelbuild-edu.onrender.com/' },
+  },
+  {
+    id: 'visar',
+    title: 'Visar Society Collection',
+    tags: ['Landing Page', 'Static Website'],
+    summary: "A static website showcasing visar's visual story telling products.",
+    overview: "A static website showcasing visar's visual story telling products.",
+    role: 'Designer and Developer',
+    year: '2025',
+    tools: ['Figma', 'TailwindCSS'],
+    captions: ['Home Page Hero Section', 'Products Preview', 'Reviews and Socials'],
+    links: { figma: '', website: 'https://whoisririi.github.io/Visar-Society-Showcase/?fbclid=IwY2xjawPTFr5leHRuA2FlbQIxMABicmlkETFRd1ZENWpseEFZRExXbThMc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgBE7TtjhdF_4IOoVeB8Izj4-mygNYaifd9ODzy3WaQlxIqmanwq_Hcu-d11_aem_a1Vwv9k-QGSBlL32ZI_7NQ' },
+  }
+]

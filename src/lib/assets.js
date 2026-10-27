@@ -21,6 +21,11 @@ const aboutFiles = import.meta.glob('../assets/about/*.{png,jpg,jpeg,webp,svg,gi
   import: 'default',
 })
 
+const projectFiles = import.meta.glob('../assets/projects/*/*.{png,jpg,jpeg,webp,svg,gif}', {
+  eager: true,
+  import: 'default',
+})
+
 export const icons = Object.fromEntries(
   Object.entries(iconFiles).map(([path, url]) => [
     path.split('/').pop().replace(/\.[^.]+$/, ''),
@@ -43,3 +48,17 @@ export const aboutImages = Object.fromEntries(
     url,
   ]),
 )
+
+// src/assets/projects/<project-id>/cover.jpg and shot-1.jpg, shot-2.jpg, ...
+// Result: { 'project-1': { cover: url | null, shots: [url, ...] } }
+export const projectImages = {}
+const sortedProjectFiles = Object.entries(projectFiles).sort(([a], [b]) =>
+  a.localeCompare(b, undefined, { numeric: true }),
+)
+for (const [path, url] of sortedProjectFiles) {
+  const [, , , id, file] = path.split('/')
+  const name = file.replace(/\.[^.]+$/, '')
+  const entry = (projectImages[id] ??= { cover: null, shots: [] })
+  if (name === 'cover') entry.cover = url
+  else if (name.startsWith('shot')) entry.shots.push(url)
+}

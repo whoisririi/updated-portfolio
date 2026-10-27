@@ -55,7 +55,7 @@ export default function Desktop() {
             onClose={manager.close}
             onMove={manager.move}
           >
-            <app.Content title={app.windowTitle} openApp={openApp} />
+            <app.Content title={app.windowTitle} isOpen={w.isOpen} openApp={openApp} />
           </Window>
         )
       })}
