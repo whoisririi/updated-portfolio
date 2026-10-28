@@ -2,6 +2,7 @@ import PlaceholderWindow from '../windows/PlaceholderWindow'
 import AboutWindow from '../windows/AboutWindow'
 import ProjectsWindow from '../windows/ProjectsWindow'
 import SoftwaresWindow from '../windows/SoftwaresWindow'
+import HistoryWindow from '../windows/HistoryWindow'
 
 // One entry per desktop icon + window.
 //   id          matches the icon file name in src/assets/icons (e.g. about.png)
@@ -54,7 +55,7 @@ export const apps = [
     windowTitle: 'history',
     tone: 'secondary',
     position: { x: '64%', y: '41%' },
-    Content: PlaceholderWindow,
+    Content: HistoryWindow,
   },
   {
     id: 'offline',
