@@ -8,7 +8,6 @@ export const about = {
     { label: 'Prototyping', value: 75, tone: 'secondary' },
     { label: 'Web Development', value: 20, tone: 'secondary' },
   ],
-  // Put the file in /public. When your real resume is ready, drop in resume.pdf
-  // and change these two values to 'resume.pdf' and 'ifa-resume.pdf'.
-  resume: { file: 'resume-placeholder.txt', downloadName: 'ifa-resume-placeholder.txt' },
+
+  resume: { file: 'ifadelarosa-resume.pdf', downloadName: 'ifadelarosa-resume.pdf' },
 }

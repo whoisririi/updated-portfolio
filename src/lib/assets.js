@@ -31,6 +31,11 @@ const toolFiles = import.meta.glob('../assets/tools/*.{png,jpg,jpeg,webp,svg,gif
   import: 'default',
 })
 
+const offlineFiles = import.meta.glob('../assets/offline/*/*.{png,jpg,jpeg,webp,svg,gif}', {
+  eager: true,
+  import: 'default',
+})
+
 export const icons = Object.fromEntries(
   Object.entries(iconFiles).map(([path, url]) => [
     path.split('/').pop().replace(/\.[^.]+$/, ''),
@@ -74,3 +79,10 @@ export const toolIcons = Object.fromEntries(
     url,
   ]),
 )
+
+// Result: { games: { 'game-1': url }, songs: { 'song-1': url } }
+export const offlineImages = { games: {}, songs: {} }
+for (const [path, url] of Object.entries(offlineFiles)) {
+  const [, , , group, file] = path.split('/')
+  if (offlineImages[group]) offlineImages[group][file.replace(/\.[^.]+$/, '')] = url
+}

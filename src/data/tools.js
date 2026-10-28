@@ -16,4 +16,4 @@ export const tools = [
   { id: 'alight-motion', name: 'Alight Motion', category: 'motion', usage: 'Motion graphics and animated assets' },
 ]
 
-export const toolsNote = 'Since I am very much fond of web and mobile designing, Figma has been my go-to tool for turning my concepts and visions to reality. They have also added Figma motion beta which gives me an easier way to animate some components. I also use Infinite Painter for drawing and Resprite for pixel art if needed. For motion graphics, I use Alight Motion. For coding, I use HTML, CSS, React and Tailwind CSS.'
+export const toolsNote = 'Since I am very much fond of web and mobile designing, Figma has been my go-to tool for turning my concepts and visions to reality. They have also added Figma motion beta which gives me an easier way to animate some components. I also use Infinite Painter for drawing and Resprite for pixel art if needed. For motion graphics, I use Alight Motion. For coding, I use HTML, CSS, React and Tailwind CSS to translate the designs into a functional website.'

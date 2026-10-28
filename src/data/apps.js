@@ -3,6 +3,7 @@ import AboutWindow from '../windows/AboutWindow'
 import ProjectsWindow from '../windows/ProjectsWindow'
 import SoftwaresWindow from '../windows/SoftwaresWindow'
 import HistoryWindow from '../windows/HistoryWindow'
+import OfflineWindow from '../windows/OfflineWindow'
 
 // One entry per desktop icon + window.
 //   id          matches the icon file name in src/assets/icons (e.g. about.png)
@@ -64,6 +65,6 @@ export const apps = [
     windowTitle: 'off the clock',
     tone: 'primary',
     position: { x: '42%', y: '60%' },
-    Content: PlaceholderWindow,
+    Content: OfflineWindow,
   },
 ]
