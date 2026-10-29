@@ -17,7 +17,8 @@ function PlaceholderTile({ label, tone }) {
 
 // Click selects, double-click (or Enter) opens. On touch screens a single tap opens.
 // Hovering (or focusing) shows a speech-bubble tooltip describing the window.
-function DesktopIcon({ app, isSelected, onSelect, onOpen }) {
+// isCompact: sits in the phone grid instead of at its absolute position.
+function DesktopIcon({ app, isSelected, isCompact, onSelect, onOpen }) {
   const image = icons[app.id]
   const tooltipId = useId()
 
@@ -27,7 +28,10 @@ function DesktopIcon({ app, isSelected, onSelect, onOpen }) {
   }
 
   return (
-    <div className="absolute w-24" style={{ left: app.position.x, top: app.position.y }}>
+    <div
+      className={isCompact ? 'relative w-24' : 'absolute w-24'}
+      style={isCompact ? undefined : { left: app.position.x, top: app.position.y }}
+    >
       <button
         type="button"
         aria-describedby={tooltipId}
@@ -49,8 +53,9 @@ function DesktopIcon({ app, isSelected, onSelect, onOpen }) {
           {app.label}
         </span>
       </button>
-      <Tooltip id={tooltipId}>{app.tooltip}</Tooltip>
 
+      {/* Must come right after the button so peer-hover / peer-focus-visible can reveal it. */}
+      <Tooltip id={tooltipId}>{app.tooltip}</Tooltip>
     </div>
   )
 }

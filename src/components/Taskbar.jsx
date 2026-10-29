@@ -6,6 +6,7 @@ const chipClass =
   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-base-dark'
 
 // Floating bar: show-desktop button, one chip per open window, live clock.
+// On phones the "desktop" label hides (the heart stays) and the chips scroll sideways.
 export default function Taskbar({ apps, windows, onToggle, onShowDesktop }) {
   const { hours, minutes, period } = useClock()
   const openApps = apps.filter((a) => windows[a.id].isOpen)
@@ -17,10 +18,10 @@ export default function Taskbar({ apps, windows, onToggle, onShowDesktop }) {
     >
       <button type="button" onClick={onShowDesktop} className={`${chipClass} bg-secondary`}>
         <HeartIcon />
-        desktop
+        <span className="max-sm:sr-only">desktop</span>
       </button>
       <div className="h-7 w-0.5 bg-base-dirty-white" aria-hidden="true" />
-      <div className="flex min-w-0 flex-1 gap-2 overflow-hidden">
+      <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto [scrollbar-width:none]">
         {openApps.map((app) => {
           const visible = !windows[app.id].isMinimized
           return (

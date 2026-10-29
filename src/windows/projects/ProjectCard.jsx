@@ -4,11 +4,10 @@ import TagList from '../../components/TagList'
 import WingButton from '../../components/WingButton'
 import { projectImages } from '../../lib/assets'
 
-// One row in the project list. The cover stretches to match the height of the text beside it.
 export default function ProjectCard({ project, index, onOpen }) {
   return (
-    <Card className="flex gap-8 p-4">
-      <div className="relative min-h-30 w-42.5 flex-none self-stretch overflow-hidden rounded-xl">
+    <Card className="flex flex-col gap-4 p-4 @md:flex-row @md:gap-8">
+      <div className="relative h-40 w-full flex-none overflow-hidden rounded-xl @md:h-auto @md:min-h-30 @md:w-42.5 @md:self-stretch">
         <Artwork
           src={projectImages[project.id]?.cover}
           alt=""
@@ -20,7 +19,6 @@ export default function ProjectCard({ project, index, onOpen }) {
         <h3 className="text-h2">{project.title}</h3>
         <TagList items={project.tags} />
         <p className="flex-1">{project.summary}</p>
-        {/* gap-8 above leaves room for the left wing */}
         <div className="pt-1">
           <WingButton tone="secondary" size="xs" onClick={() => onOpen(project.id)}>
             view project

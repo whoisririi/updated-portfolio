@@ -229,3 +229,9 @@
     @apply text-h4;
   }
 }
+  @media (max-width: 639px) {
+     :root {
+       --text-h1: 44px;
+       --text-h2: 30px;
+     }
+   }

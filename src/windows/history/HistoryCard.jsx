@@ -44,7 +44,7 @@ export default function HistoryCard({ entry, isActive, height, onSelect, onMeasu
             onClick={onSelect}
             className={`block w-full p-4 text-left focus-visible:-outline-offset-4 focus-visible:outline-2 focus-visible:outline-base-dark ${isActive ? 'pb-2.5' : ''}`}
           >
-            <span className="flex items-baseline justify-between gap-3">
+            <span className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
               <span className="font-display text-h3 text-base-dark">{entry.place}</span>
               <span className="flex-none text-caption text-gray-600">{entry.dates}</span>
             </span>
