@@ -1,6 +1,6 @@
 export const widgets = {
   owner: 'to my space',
-  tagline: 'double click the icons to open the windows',
+  tagline: 'Double click the icons to open them. You may also drag them to move them around!~',
   vibes: [
     { label: 'Kitschy', value: 80, tone: 'secondary' },
     { label: 'Pinkish', value: 55, tone: 'primary' },
