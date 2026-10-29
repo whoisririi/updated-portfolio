@@ -4,6 +4,7 @@ import ProjectsWindow from '../windows/ProjectsWindow'
 import SoftwaresWindow from '../windows/SoftwaresWindow'
 import HistoryWindow from '../windows/HistoryWindow'
 import OfflineWindow from '../windows/OfflineWindow'
+import ContactWindow from '../windows/ContactWindow'
 
 // One entry per desktop icon + window.
 //   id          matches the icon file name in src/assets/icons (e.g. about.png)
@@ -38,7 +39,7 @@ export const apps = [
     windowTitle: 'contact',
     tone: 'secondary',
     position: { x: '4%', y: '59%' },
-    Content: PlaceholderWindow,
+    Content: ContactWindow,
   },
   {
     id: 'softwares',

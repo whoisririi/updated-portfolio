@@ -66,3 +66,12 @@ export function ChevronRightIcon() {
     </svg>
   )
 }
+
+export function MailIcon() {
+  return (
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="8" width="24" height="16" rx="3" className="fill-primary-50" />
+      <path d="M5 10l11 8 11-8" />
+    </svg>
+  )
+}

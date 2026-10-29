@@ -36,6 +36,11 @@ const offlineFiles = import.meta.glob('../assets/offline/*/*.{png,jpg,jpeg,webp,
   import: 'default',
 })
 
+const socialFiles = import.meta.glob('../assets/social/*.{png,jpg,jpeg,webp,svg,gif}', {
+  eager: true,
+  import: 'default',
+})
+
 export const icons = Object.fromEntries(
   Object.entries(iconFiles).map(([path, url]) => [
     path.split('/').pop().replace(/\.[^.]+$/, ''),
@@ -86,3 +91,11 @@ for (const [path, url] of Object.entries(offlineFiles)) {
   const [, , , group, file] = path.split('/')
   if (offlineImages[group]) offlineImages[group][file.replace(/\.[^.]+$/, '')] = url
 }
+
+//facebook.png, instagram.png, linkedin.png, github.png
+export const socialImages = Object.fromEntries(
+  Object.entries(socialFiles).map(([path, url]) => [
+    path.split('/').pop().replace(/\.[^.]+$/, ''),
+    url,
+  ]),
+)

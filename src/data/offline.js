@@ -19,10 +19,10 @@ export const offline = {
     subtitle: 'song rotation',
     intro: 'I love listening to music while working, and these are some of my favorite songs that I listen to on repeat~',
     items: [
-      { id: 'sugartalking', title: 'Sugar Talking', artist: 'Sabrina Carpenter', mood: 'Heavy Rotation' },
-      { id: 'satellite', title: 'Satellite', artist: 'Harry Styles', mood: 'Breather' },
-      { id: 'ily', title: 'P.S. I love you', artist: 'Paul Partohap', mood: 'Late night talks' },
-      { id: 'romantic', title: 'Why You Wanna Fight?', artist: 'Bruno Mars', mood: 'singing out loud in the car' },
+      { id: 'sugartalking', title: 'Sugar Talking', artist: 'Sabrina Carpenter', mood: "Man's Best Friend" },
+      { id: 'satellite', title: 'Satellite', artist: 'Harry Styles', mood: "Harry's House" },
+      { id: 'ily', title: 'P.S. I love you', artist: 'Paul Partohap', mood: "P.S. I love you" },
+      { id: 'romantic', title: 'Why You Wanna Fight?', artist: 'Bruno Mars', mood: "The Romantic" },
     ],
   },
 }
