@@ -4,9 +4,14 @@ import { WingIcon } from '../../components/icons'
 
 const BORDER = 4 // the card's 2px border, top and bottom
 
+// The wing only appears on wide screens. On phones there is no room beside the card.
+const wingClass =
+  'pointer-events-none absolute top-1/2 -right-10.5 -mt-3.75 h-7.5 w-9.5 origin-left animate-wing motion-reduce:animate-none'
+
 // One experience, laid out like a resume entry.
-// Collapsed: company, dates and role pills. Active: bigger, floating, with bullets and a wing.
-export default function HistoryCard({ entry, isActive, height, onSelect, onMeasure }) {
+// Collapsed: company, dates and role pills. Active: bigger, floating, with bullets and (on wide
+// screens) a wing. isCompact (phone): full width and no wing.
+export default function HistoryCard({ entry, isActive, isCompact, height, onSelect, onMeasure }) {
   const contentRef = useRef(null)
 
   // Reports the card's natural height (and keeps doing so if the window is resized and the
@@ -27,7 +32,7 @@ export default function HistoryCard({ entry, isActive, height, onSelect, onMeasu
     <div
       style={{ height }}
       className={
-        'relative mr-10 origin-left transition-[height,opacity,scale] duration-300 motion-reduce:transition-none ' +
+        `relative ${isCompact ? 'origin-center' : 'mr-10 origin-left'} transition-[height,opacity,scale] duration-300 motion-reduce:transition-none ` +
         (isActive ? 'animate-float opacity-100 motion-reduce:animate-none' : 'scale-94 opacity-60')
       }
     >
@@ -52,7 +57,7 @@ export default function HistoryCard({ entry, isActive, height, onSelect, onMeasu
               {entry.roles.map((role, i) => (
                 <span
                   key={`${i}-${role}`}
-                  className="rounded-full border-2 border-secondary bg-base-dirty-white px-3 py-0.5 text-caption font-semibold text-base-dark"
+                  className="rounded-full border-2 border-secondary bg-base-dirty-white px-3 py-1 text-caption font-semibold text-base-dark sm:py-0.5"
                 >
                   {role}
                 </span>
@@ -64,7 +69,7 @@ export default function HistoryCard({ entry, isActive, height, onSelect, onMeasu
             <ul className="grid gap-1.5 px-4 pb-4">
               {entry.bullets.map((bullet, i) => (
                 <li key={`${i}-${bullet}`} className="flex gap-2.5 text-caption">
-                  <span aria-hidden="true" className="mt-1.5 size-1.5 flex-none rounded-full bg-secondary" />
+                  <span aria-hidden="true" className="mt-1.5 size-1.5 flex-none rounded-full bg-primary" />
                   <span>
                     <Emphasis text={bullet} />
                   </span>
@@ -75,9 +80,7 @@ export default function HistoryCard({ entry, isActive, height, onSelect, onMeasu
         </div>
       </div>
 
-      {isActive && (
-        <WingIcon className="pointer-events-none absolute top-1/2 -right-10.5 -mt-3.75 h-7.5 w-9.5 origin-left animate-wing motion-reduce:animate-none" />
-      )}
+      {isActive && !isCompact && <WingIcon className={wingClass} />}
     </div>
   )
 }

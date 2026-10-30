@@ -160,6 +160,41 @@
     }
   }
 
+    /* ---- Motion (loading screen) ---- */
+  --animate-hop: hop 1.4s ease-in-out infinite; /* each bunny jumps */
+  @keyframes hop {
+    0%,
+    45%,
+    100% {
+      transform: translateY(0) scale(1, 1);
+    }
+    15% {
+      transform: translateY(-20px) scale(0.96, 1.06);
+    }
+    30% {
+      transform: translateY(0) scale(1.06, 0.94);
+    }
+  }
+
+  --animate-pellet: pellet 1.4s ease-out infinite; /* food rising toward the bunnies */
+  @keyframes pellet {
+    0% {
+      opacity: 0;
+      transform: translateY(14px) scale(0.6);
+    }
+    30% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(-6px) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-18px) scale(0.4);
+    }
+  }
+
   --animate-wing: pop 0.35s ease-out, flap 1.6s 0.35s ease-in-out infinite; /* active card wing */
   @keyframes pop {
     from {

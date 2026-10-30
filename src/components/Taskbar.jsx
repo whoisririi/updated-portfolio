@@ -2,11 +2,9 @@ import { useClock } from '../hooks/useClock'
 import { HeartIcon } from './icons'
 
 const chipClass =
-  'flex items-center gap-1.5 rounded-xl border-2 border-base-dirty-white px-3 py-1 font-display text-caption text-base-dark ' +
+  'flex shrink-0 items-center gap-1.5 rounded-xl border-2 border-base-dirty-white px-3 py-1 font-display text-caption whitespace-nowrap text-base-dark ' +
   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-base-dark'
 
-// Floating bar: show-desktop button, one chip per open window, live clock.
-// On phones the "desktop" label hides (the heart stays) and the chips scroll sideways.
 export default function Taskbar({ apps, windows, onToggle, onShowDesktop }) {
   const { hours, minutes, period } = useClock()
   const openApps = apps.filter((a) => windows[a.id].isOpen)
@@ -20,8 +18,8 @@ export default function Taskbar({ apps, windows, onToggle, onShowDesktop }) {
         <HeartIcon />
         <span className="max-sm:sr-only">desktop</span>
       </button>
-      <div className="h-7 w-0.5 bg-base-dirty-white" aria-hidden="true" />
-      <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto [scrollbar-width:none]">
+      <div className="h-7 w-0.5 flex-none bg-base-dirty-white" aria-hidden="true" />
+      <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto overflow-y-hidden [scrollbar-width:none]">
         {openApps.map((app) => {
           const visible = !windows[app.id].isMinimized
           return (
@@ -37,7 +35,7 @@ export default function Taskbar({ apps, windows, onToggle, onShowDesktop }) {
           )
         })}
       </div>
-      <time className="rounded-xl bg-primary-50 px-3.5 py-1 font-display text-h4 text-base-dark">
+      <time className="flex-none rounded-xl bg-primary-50 px-3.5 py-1 font-display text-h4 whitespace-nowrap text-base-dark">
         {hours}:{minutes} {period}
       </time>
     </nav>

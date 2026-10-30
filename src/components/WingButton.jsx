@@ -11,6 +11,7 @@ const sizes = {
   md: 'min-h-11 min-w-42 px-5.5 py-2 text-h4',
   sm: 'min-h-10 min-w-32 px-4 py-2 text-h4',
   xs: 'min-h-8 min-w-24 px-3 py-1 text-caption',
+  fluid: 'min-h-8 min-w-24 px-3 py-1 text-caption @md:min-h-11 @md:min-w-42 @md:px-5.5 @md:py-2 @md:text-h4',
 }
 
 const base =

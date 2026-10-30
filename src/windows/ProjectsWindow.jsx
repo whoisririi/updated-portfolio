@@ -23,7 +23,7 @@ export default function ProjectsWindow({ isOpen }) {
   const project = projects.find((p) => p.id === selectedId)
 
   return (
-    <div ref={rootRef}>
+   <div ref={rootRef} className="@container">
       {project ? (
         <ProjectDetail project={project} onBack={() => showProject(null)} />
       ) : (

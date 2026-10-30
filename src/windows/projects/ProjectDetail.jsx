@@ -46,7 +46,7 @@ export default function ProjectDetail({ project, onBack }) {
         </Card>
       </section>
 
-      <dl className="grid grid-cols-3 gap-3">
+      <dl className="grid grid-cols-1 gap-3 @md:grid-cols-3">
         {[
           ['Role', project.role],
           ['Year', project.year],
